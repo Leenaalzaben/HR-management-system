@@ -1,36 +1,33 @@
 'use strict';
 // Get the nav element by its id
-const navbar = document.getElementById('navbar');
+// const navbar = document.getElementById('navbar');
 // Change the background color
 
 const color1 = "#F5FFC9";
-const color2 = "#A86464";
+const color2 = "#ab5353";
 const color3 = "#F7C04A";
-navbar.style.backgroundColor = color2;
+// navbar.style.backgroundColor = color2;
 document.body.style.backgroundColor = color1;
-navbar.style.color =color2;
+// navbar.style.color = color2;
 
-
-
-    
-
-// console.log(formE1);
-// You will create a constructor to generate an employee object
-// which will be rendered in the main section from your app.js file.
 
 //Each employee should has: employeeID, fullName, department, level, imageUrl, salary so 
 //a constructor to generate an employee object is
 let allEmployee = [];
+// calling the form
+let myForm = document.getElementById('myForm');
+myForm.style.color = color2;
+let container = document.getElementById('cardContainer');
+//Constructor
 function Employee(employeeID, fullName, department, level, imageUrl) {
     this.employeeID = employeeID;
     this.fullName = fullName;
     this.department = department;
     // This part have level of employee J,Mid,S try switch 
-    this.level = level; 
-    // what is the Img. I want to insert ????
+    this.level = level;
     this.imageUrl = imageUrl;
     // I want it to find the taxSalary
-    this.salary = 0;// its need to declare eith 0 as int value not salary???
+    this.salary = this.netSalary;
 
     allEmployee.push(this);
 
@@ -59,108 +56,81 @@ Employee.prototype.calculateSalary = function () {
             maxSalary = 2000;
             break;
         default:
-            // can I remove this part or must use it instead one of cases ????ask
-            // or console.log("Invalid Salary");  ??
+            // allEmployee[i].calculateSalary();
             break;
 
     }
-
-
     const randomSalary = Math.floor(Math.random() * (maxSalary - minSalary + 1) + minSalary);// any random between Min and Max
     const taxPercent = 7.5;// amount of tax
-    const netSalary = randomSalary - (randomSalary * taxPercent / 100);// after apply tax
+    const netSalary = randomSalary - (randomSalary * taxPercent / 100);
     this.salary = netSalary;
 }
 
 
 
 
-// render 
+// render the data on home page
 Employee.prototype.render = function () {
-    document.write(`<h1>${this.fullName}'s salary is ${this.salary}</h1>`)
+    const div = document.createElement("div");
+    div.innerHTML = `
+    <div class="card">
+    <img src="${this.imageUrl}" alt="img">
+    <h2> Name :${this.fullName} 
+    -ID :${this.employeeID}
+    Department :${this.department}
+    Level :${this.level} 
+    
+    </div>`;
+    container.appendChild(div);
+
 }
 
 
 
 //employees instances
-allEmployee = [
-
-    new Employee(1000, 'Ghazi Samer', 'Administration', 'Senior','https://github.com/LTUC/amman-prep-d10/blob/main/Class-08/lab/assets/Ghazi.jpg'),
-    new Employee(1001, 'Lana Ali', 'Finance', 'Senior','https://github.com/LTUC/amman-prep-d10/blob/main/Class-08/lab/assets/Lana.jpg'),
-    new Employee(1002, 'Tamara Ayoub', 'Marketing', 'Senior','https://github.com/LTUC/amman-prep-d10/blob/main/Class-08/lab/assets/Tamara.jpg'),
-    new Employee(1003, 'Safi Walid', 'Administration', 'Mid-Senior','https://github.com/LTUC/amman-prep-d10/blob/main/Class-08/lab/assets/Safi.jpg'),
-    new Employee(1004, 'Omar Zaid', 'Development', 'Senior','https://github.com/LTUC/amman-prep-d10/blob/main/Class-08/lab/assets/Omar.jpg'),
-    new Employee(1005, 'Rana Saleh', 'Development', 'Junior','https://github.com/LTUC/amman-prep-d10/blob/main/Class-08/lab/assets/Rana.jpg'),
-    new Employee(1006, 'Hadi Ahmad', 'Finance', 'Mid-Senior','https://github.com/LTUC/amman-prep-d10/blob/main/Class-08/lab/assets/Hadi.jpg'),
-
-];
 
 
-for (let i = 0; i < allEmployee.length; i++) {
-    // allEmployee[i].calculateSalary();
-    // allEmployee[i].render();
+let GhaziSamer = new Employee(1000, 'Ghazi Samer', 'Administration', 'Senior', './assets/Ghazi.jpg');
+let LanaAli = new Employee(1001, 'Lana Ali', 'Finance', 'Senior', './assets/Lana.jpg');
+let TamaraAyoub = new Employee(1002, 'Tamara Ayoub', 'Marketing', 'Senior', './assets/Tamara.jpg');
+let SafiWalid = new Employee(1003, 'Safi Walid', 'Administration', 'Mid-Senior', './assets/Safi.jpg');
+let OmarZaid = new Employee(1004, 'Omar Zaid', 'Development', 'Senior', './assets/Omar.jpg');
+let RanaSaleh = new Employee(1005, 'Rana Saleh', 'Development', 'Junior', './assets/Rana.jpg');
+let HadiAhmad = new Employee(1006, 'Hadi Ahmad', 'Finance', 'Mid-Senior', './assets/Hadi.jpg');
+
+
+function callAllEmployee(allEmployee) {
+    for (let i = 0; i < allEmployee.length; i++) {
+        allEmployee[i].render();
+    }
 }
-
+callAllEmployee(allEmployee);
+function uniqueId(){
+//To generate a unique four digits employee id number between 1000 9999
+    return Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;
+}
 
 //______________________part II____________________________
 //---------------------------------------------------------
-//_______________________1.form_____________________________
-
-let formE1 =document.getElementById('my-form');
-formE1.style.color=color2;
-//_______________________2.fullName_________________________
-
-const fullNameInput = document.getElementById("fullName");
-const fullName = fullNameInput.value;
+//I need to collect the data ftom the form
+//then pass the data to construcrot to create new object
+// want render method by .render() to add as anew card
 
 
-//________________________3.Department______________________
+//collect the data from form
+function eventHandler(event) {
+    event.preventDefault();
+    let fullName = (event.target.fullName.value);
+    let Department =(event.target.Department.value);
+    let level = (event.target.level.value);
+    let imageUrl = (event.target.img.value);
+    
+}
 
-const departmentDropdown = document.getElementById("Department");
-const selectedDepartment = departmentDropdown.value;
-
-
-//________________________4.Level___________________________
-
-const levelDropdown = document.getElementById("level");
-const selectedLevel = levelDropdown.value;
-
-
-// _______________________5.Create Image_____________________
-
-let imgE1 = document.createElement("image");
-image.src=this.imageUrl;
-//imgE1.src=this.imageUrl;
-secImg.appendChild(imgE1);
-
-//_________________________6.Card employee___________________
+myForm.addEventListener("submit", eventHandler);
+console.log(fullName,Department,level);
+let newObject=new Employee(1001,fullName,Department,level,img)
+// newObject.render();
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// //Footer bar
-// const footerSection = document.getElementById('footerSection');
-// footerSection.style.backgroundColor = 'black'; // Set the background color
-// footerSection.style.padding = '2px'; // Set the padding
-// footerSection.style.color = '#333'; // Set the text color
 

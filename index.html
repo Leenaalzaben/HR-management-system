@@ -6,114 +6,89 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> Home page </title>
-  <!-- <link rel="stylesheet" href="./home.css"> -->
+  <link rel="stylesheet" href="./home.css">
 </head>
 
 <body>
 
   <header>
-    <section class="Header">
-
-      <div class="nav-links">
-
-        <nav id="navbar">
+    <!-- <section class="Header"> -->
+      <!-- id="navbar" -->
+        <nav >
           <ul>
             <li> <a href="index.html">Home </a></li>
             <li> <a href="./accounting.html">About </a></li>
             <li> <a href="https://www.google.com">Help </a></li>
           </ul>
         </nav>
-      </div>
-      
-      <style>
-        nav li {
-          display: inline-block;
-          margin: 20px 20px;
-        }
-      </style>
-      
+         
   </header>
+  <br><br><br><br>
+
   <main>
-
-
-
+<div id="cardContainer" ></div> 
+<br><br><br>
 
     <!-- <form action="./accounting.html"> -->
 
-    <form id="my-form">
+    <form id="myForm">
+      <br>
       <!-- Add Label -->
       <!-- 1. FullName -->
-      <section id="fullName">
-
-        <label for="fullName">Full Name:</label>
-        <input type="text" id="fullName" name="fullName" placeholder="Enter your username">
-      </section>
-      <br>
+    
+        <label for="fullName">Full Name:</label><br>
+        <input type="text" id="fullName" placeholder="Enter your username" value =""><br><br>
 
       <!-- 2. Department -->
-      <section id="Department">
-
-        <label for="Department"> Department : </label>
-        <select name="Department" id='Department'>
+      
+        <label for="Department"> Department : </label><br>
+        <select id="Department" form="form"><br>
           <option value="Administration">Administration</option>
           <option value="Marketing">Marketing</option>
           <option value="Development">Development</option>
           <option value="Finance">Finance</option>
         </select>
         <br><br>
-      </section>
-
-
-      <!-- 3. Level -->
-      <section id="level">
-        <label for="Level"> choose your level : </label>
-        <select name="Level" id='Level'>
+          <!-- 3. Level -->
+      
+        <label for="level"> Choose your level : </label><br>
+        <select id="level" form='form'><br>
           <option value="Junior">Junior</option>
           <option value="Mid-Senior">Mid-Senior</option>
           <option value="Senior">Senior</option>
         </select>
-      </section>
+      
       <br><br>
 
       <!--4. Image foe form -->
-      <section id="secImg">
+     
         <!-- <img src=""> -->
         <!-- <label for="image">Click the image:</label>
         <input type="file" id="image" name="image"> -->
-        <label for="image">Your imageUrl:</label>
-        <input type="text" id="image" name="image">
+        <label for="img"> Image Url:</label><br>
+        <input type="select" id="img" name="image"><br>
 
-      </section>
-      <br><br>
+     
+      <br><br><br>
       <!-- 5.submit botton -->
-      <section id="submitSec">
-
         <input type="submit" value="Submit">
-      </section>
+        <br><br><br>
+      
 
 
-      <script src="./app.js"></script>
+      
     </form>
-
+    <script src="./app.js"></script>
   </main>
 
-  <footer id="footerSection">
-
-
-    <div>
-      <a href="https://www.facebook.com"></a>
-      <a href="https://twitter.com"></a>
-      <a href="https://www.instagram.com"></a>
-    </div>
+  <footer >
+    
+      <a href="https://www.facebook.com"id="myLink">facebook</a>
+      <a href="https://twitter.com"id="twitter">twitter</a>
+      <a href="https://www.instagram.com"id="myLink">instagram</a>
+    
     <p>&copy; 2023 All rights reserved.</p>
-    <style>
-      p 
-      {
-        display: inline-block;
-        margin: 450px 400px ;
-        
-      }
-    </style>
+   
   </footer>
 
 </body>

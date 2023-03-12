@@ -1,0 +1,156 @@
+nav {
+  background-color: #ab5353;
+  overflow: hidden;
+  font-size: 18px;
+  
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 9px 130px;
+  
+}
+
+nav a {
+
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 14px 100px;
+  text-decoration: none;
+ 
+
+}
+
+input[type="text"] {
+
+  width: 50%;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 40px;
+  box-sizing: border-box;
+}
+
+img {
+  width: 250px;
+  /* max-width: 100%; */
+  height: auto;
+}
+
+div {
+  width: 350px;
+  /* background-color: #ab5353; */
+  padding: 60px;
+}
+
+h2 {
+  font-size: 22px;
+}
+
+#cardContainer {
+  width: 89%;
+  display: flex;
+  justify-content: space-between;
+  /* ** */
+  flex-wrap: wrap;
+
+
+
+}
+
+.card {
+  background-color: #ffffff;
+  /* box-shadow: 17px 0 0 17px rgba(0, 0, 0, 0.2); */
+  padding: 2px;
+  text-align: center;
+
+
+}
+
+form {
+  display: flexbox;
+  justify-content: center;
+
+  text-align: center;
+
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  width: 30%;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 5px;
+
+
+}
+
+select {
+  width: 50%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+
+  margin-bottom: 10px;
+}
+
+input[type="select"] {
+
+  width: 50%;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 40px;
+  box-sizing: border-box;
+
+}
+
+input[type="submit"] {
+  background-color: #2d78bf;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+footer {
+  background-color: #ab5353;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  padding: 20px 0;
+  
+}
+
+p {
+  display: inline-block;
+  /* text-decoration: none; */
+  /* margin: 450px 400px; */
+}
+
+footer a{
+
+  display: inline-block;
+  margin: 10px 10px;
+  font-size: 17px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+}
+footer a:hover {
+  color: #926f6f;
+}
+
+footer p {
+  margin: 0;
+  font-size: 17px;
+  color: #fffdfd;
+}

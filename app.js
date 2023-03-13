@@ -64,12 +64,14 @@ Employee.prototype.calculateSalary = function () {
     const taxPercent = 7.5;// amount of tax
     const netSalary = randomSalary - (randomSalary * taxPercent / 100);
     this.salary = netSalary;
+    return this.salary;
 }
 
 
 
 
 // render the data on home page
+// salary:${netSalary}
 Employee.prototype.render = function () {
     const div = document.createElement("div");
     div.innerHTML = `
@@ -79,7 +81,7 @@ Employee.prototype.render = function () {
     -ID :${this.employeeID}
     Department :${this.department}
     Level :${this.level} 
-    
+    salary:${this.calculateSalary()}
     </div>`;
     container.appendChild(div);
 
@@ -121,16 +123,25 @@ function uniqueId(){
 function eventHandler(event) {
     event.preventDefault();
     let fullName = (event.target.fullName.value);
+    // console.log(event);
     let Department =(event.target.Department.value);
     let level = (event.target.level.value);
-    let imageUrl = (event.target.img.value);
-    
+    let imageUrl = (event.target.imgurl.value);
+    console.log(fullName,Department,level,imageUrl)
+if(imageUrl==""){
+    imageUrl="http://3.bp.blogspot.com/-XBAE6fsDoVs/UF11yTKrDDI/AAAAAAAAAQc/dM44YoTdwJs/s1600/Google++(1).jpeg";
+
+}
+
+let newObject=new Employee(1001,fullName,Department,level,imageUrl);
+// console.log(newObject);
+newObject.render();
+
 }
 
 myForm.addEventListener("submit", eventHandler);
-console.log(fullName,Department,level);
-let newObject=new Employee(1001,fullName,Department,level,img)
-// newObject.render();
+// console.log(fullName,Department,level,imageUrl);
 
+// 
 
 

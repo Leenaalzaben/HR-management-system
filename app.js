@@ -18,7 +18,7 @@ let allEmployee = [];
 let myForm = document.getElementById('myForm');
 myForm.style.color = color2;
 let container = document.getElementById('cardContainer');
-//Constructor
+
 function Employee(employeeID, fullName, department, level, imageUrl) {
     this.employeeID = employeeID;
     this.fullName = fullName;
@@ -87,11 +87,6 @@ Employee.prototype.render = function () {
 
 }
 
-
-
-//employees instances
-
-
 let GhaziSamer = new Employee(1000, 'Ghazi Samer', 'Administration', 'Senior', './assets/Ghazi.jpg');
 let LanaAli = new Employee(1001, 'Lana Ali', 'Finance', 'Senior', './assets/Lana.jpg');
 let TamaraAyoub = new Employee(1002, 'Tamara Ayoub', 'Marketing', 'Senior', './assets/Tamara.jpg');
@@ -100,15 +95,18 @@ let OmarZaid = new Employee(1004, 'Omar Zaid', 'Development', 'Senior', './asset
 let RanaSaleh = new Employee(1005, 'Rana Saleh', 'Development', 'Junior', './assets/Rana.jpg');
 let HadiAhmad = new Employee(1006, 'Hadi Ahmad', 'Finance', 'Mid-Senior', './assets/Hadi.jpg');
 
+//employees instances
+//function callAllEmployee(allEmployee) {
 
-function callAllEmployee(allEmployee) {
+function callAllEmployee() {
+    console.log(allEmployee);
     for (let i = 0; i < allEmployee.length; i++) {
         allEmployee[i].render();
     }
 }
-callAllEmployee(allEmployee);
-function uniqueId(){
-//To generate a unique four digits employee id number between 1000 9999
+// callAllEmployee();
+function uniqueId() {
+    //To generate a unique four digits employee id number between 1000 9999
     return Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;
 }
 
@@ -119,29 +117,57 @@ function uniqueId(){
 // want render method by .render() to add as anew card
 
 
-//collect the data from form
+//1.collect the data from form
 function eventHandler(event) {
     event.preventDefault();
     let fullName = (event.target.fullName.value);
     // console.log(event);
-    let Department =(event.target.Department.value);
+    let Department = (event.target.Department.value);
     let level = (event.target.level.value);
     let imageUrl = (event.target.imgurl.value);
-    console.log(fullName,Department,level,imageUrl)
-if(imageUrl==""){
-    imageUrl="http://3.bp.blogspot.com/-XBAE6fsDoVs/UF11yTKrDDI/AAAAAAAAAQc/dM44YoTdwJs/s1600/Google++(1).jpeg";
+    console.log(fullName, Department, level, imageUrl)
+    if (imageUrl == "") {
+        imageUrl = "http://stayatrejoice.in/wp-content/uploads/2020/03/Review-1-1024x1024.jpg";
 
-}
-
-let newObject=new Employee(1001,fullName,Department,level,imageUrl);
-// console.log(newObject);
-newObject.render();
-
+    }
+    //2. newobj
+    let newObject = new Employee(1001, fullName, Department, level, imageUrl);
+    // console.log(newObject);
+    //3.render randomly use
+    newObject.render();
+    //1. +2. +3. will happen when I click to submit and data will render in newobject
+    saveData(allEmployee);
 }
 
 myForm.addEventListener("submit", eventHandler);
-// console.log(fullName,Department,level,imageUrl);
 
-// 
+function saveData(allEmployee) {
+    //deal with strings only so want to convert [object,object] result to string
+    let stringArr = JSON.stringify(allEmployee);
+    localStorage.setItem('myEmployee', stringArr);
+}
+//I call saveData function from the object of array allEmployee
+// when ? when I click to submit button 
+function getData() {
+    let getBackArr = localStorage.getItem('myEmployee');
+    //string getbackarr cant do render cuz its string
+    // console.log(getBackArr);
+    // re-string 
+    let objArray = JSON.parse(getBackArr);
+    console.log(objArray);
+
+
+    // re-instat. of new instance
+    for (let i = 7; i < objArray.length; i++) {
+
+        new Employee(objArray[i].employeeID, objArray[i].fullName, objArray[i].department,
+            objArray[i].level, objArray[i].imageUrl, objArray[i].salary);
+
+    }
+
+    callAllEmployee();
+}
+getData();
+
 
 

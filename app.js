@@ -99,7 +99,6 @@ let HadiAhmad = new Employee(1006, 'Hadi Ahmad', 'Finance', 'Mid-Senior', './ass
 //function callAllEmployee(allEmployee) {
 
 function callAllEmployee() {
-    console.log(allEmployee);
     for (let i = 0; i < allEmployee.length; i++) {
         allEmployee[i].render();
     }
@@ -154,7 +153,7 @@ function getData() {
     // console.log(getBackArr);
     // re-string 
     let objArray = JSON.parse(getBackArr);
-    console.log(objArray);
+   
 
 
     // re-instat. of new instance

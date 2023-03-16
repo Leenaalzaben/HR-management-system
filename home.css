@@ -1,14 +1,27 @@
 nav {
-  background-color: #ab5353;
+  background-color: #9e8c35;
   overflow: hidden;
   font-size: 18px;
   
 }
+nav ul {
+  display: flex;
+}
 
 nav ul li {
+  text-decoration: none;
+  font-size: 40px;
+
   display: inline-block;
   margin: 9px 130px;
   
+}
+a {
+  display: block;
+  padding: 5px;
+  /* background-color: #dddddd; */
+  
+
 }
 
 nav a {
@@ -68,6 +81,10 @@ h2 {
 }
 
 form {
+  border-collapse: collapse;
+
+
+border: 3px solid;
   display: flexbox;
   justify-content: center;
 
@@ -115,11 +132,11 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background-color: #45a049;
+  background-color: #9e8c35;
 }
 
 footer {
-  background-color: #ab5353;
+  background-color: #9e8c35;
   color: #fff;
   display: flex;
   justify-content: center;

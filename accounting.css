@@ -1,0 +1,56 @@
+body {
+    color: black;
+    background-color: #f9eaea;
+
+}
+
+
+
+
+h1 {
+    font-family: "Sofia", sans-serif;
+    margin-top: 70px;
+
+    /* text-shadow: 2px 2px rgb(144, 131, 131); */
+    text-indent: 70px;
+    letter-spacing: 3px;
+    /* color:#6bb89c; */
+}
+
+
+table,
+th,
+td {
+    border: 1px solid;
+    font-size: 30px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+    border: 2px solid;
+
+}
+
+th {
+    height: 70px;
+    background-color: #6bb89c;
+    color: white;
+}
+
+td {
+    height: 70px;
+    text-align: center;
+}
+
+th,
+td {
+    padding: 12px;
+    border-bottom: 1px solid #5a2121;
+
+
+}
+
+tr:hover {
+    background-color:#9e8c35;
+}

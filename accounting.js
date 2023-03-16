@@ -1,63 +1,115 @@
 'use strict';
+let numberOfEmployeeAdministration = 0;
+let numberOfEmployeeFinance = 0;
+let numberOfEmployeeMarketing = 0;
+let numberOfEmployeeDevelopment = 0;
+let sumAdministration = 0;
+let sumFinance=0;
+let sumMarketing=0;
+let sumDevelopment=0;
+// 1. GetItem (mydata)
+let accountBack = localStorage.getItem('myEmployee');
+//const tableData = JSON.parse(localStorage.getItem('myTableData'));
+// 2. convert from object to string
+let objArray = JSON.parse(accountBack);
+console.log(objArray);
 
-let accountBack=localStorage.getItem('myEmployee');
+
+  function department(){ 
+    
+  // department.employees.push(employee);
+  // department.totalSalary += employee.salary;
+  }
+
+//try to create js table
+// let table = document.getElementById("myTable");
+const bodyElement=document.getElementById("body");
+let  table = document.createElement('table');
+// console.log(table);
+let headerRow = table.insertRow();
+console.log(headerRow);
+let departmentHeader = headerRow.insertCell();
+//console.log(departmentHeader);
+  departmentHeader.textContent = 'Department Name';
+  let employeeHeader = headerRow.insertCell();
+  // console.log(employeeHeader);
+  employeeHeader.textContent = 'Number of employees';
+  let totalSalaryHeader = headerRow.insertCell();
+  totalSalaryHeader.textContent = 'Total Salary';
+  // console.log(totalSalaryHeader);
+  let averageHeader = headerRow.insertCell();
+  averageHeader.textContent = 'Average';
+  // console.log(averageHeader);
+  
+
+
+
+
 
 
 
 // Create a new table element
-// 
-
-const table = document.createElement("table");
-
-
-{/* <table>
-<th>Department</th>
-<th># of employee</th>
-<th>Total salary</th>
-<th>Avarge salary</th>
-
-  <tr>
-    <th>Administration</th>
-    <td>cell 2</td>
-    <td>cell 3</td>
-    <td>cell 4</td>
-  </tr>
-  <tr>
-    <th>Marketing</th>
-    <td>cell 6</td>
-    <td>cell 7</td>
-    <td>cell 8</td>
-  </tr>
+for (let i = 0; i < objArray.length; i++) {
+  if (objArray[i].department == "Administration") {
+    numberOfEmployeeAdministration++;
+    sumAdministration +=objArray[i].salary;
+    console.log(sumAdministration);
+    
+  }
+  if (objArray[i].department == "Finance") {
+    numberOfEmployeeFinance++;
+    sumFinance+=objArray[i].salary;
+    console.log(sumFinance);
+    
+  }
+  if (objArray[i].department == "Marketing") {
+    numberOfEmployeeMarketing++;
+    sumMarketing+=objArray[i].salary;
+    console.log(sumMarketing);
+    
+  }
+  if (objArray[i].department == "Development") {
+    numberOfEmployeeDevelopment++;
+    sumDevelopment+=objArray[i].salary;
+    console.log(sumDevelopment);
+  }
   
-  <tr>
-    <th>Development</th>
-    <td>cell 10</td>
-    <td>cell 11</td>
-    <td>cell 12</td>
-  </tr>
-  <tr>
-    <th>Finance</th>
-    <td>cell 14</td>
-    <td>cell 15</td>
-    <td>cell 16</td>
-  </tr>
-</table> */}
+  
+  
+}
+console.log(numberOfEmployeeFinance);
+console.log(numberOfEmployeeMarketing);
+console.log(numberOfEmployeeAdministration);
+
+function render() {
+  let tableRow=document.createElement("tr")
+  bodyElement.appendChild(tableRow);
+  // console.log(tableRow);
+  
+  
+  let tableDataRow =document.createElement("td");
+  console.log(tableDataRow);
+  tableDataRow.textContent=objArray[i].department;
+  
+  
+  
+  
+  
+  
+  
+  //tr
+  //appendtable
+  //td
+  // Retrieve data from local storage
+  
+  
+  
+
+  
+  
+
+
+}
 
 
 
-
-// const headerRow = document.createElement("tr");
-
-
-// // Create table headers
-// const header1 = document.createElement("th");
-// const header2 = document.createElement("th");
-// const header3 = document.createElement("th");
-// const header4 = document.createElement("th");
-
-
-
-// header1.textContent = "Header 1";
-// header2.textContent = "Header 2";
-// header3.textContent = "Header 3";
-// header4.textContent = "Header 4";

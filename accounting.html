@@ -1,36 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accounting page</title>
-    <link rel="stylesheet" href="./home.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Accounting page</title>
+  <link rel="stylesheet" href="./home.css">
+  <link rel="stylesheet" href="./accounting.css">
+
 
 </head>
+
 <body>
-    
-    <header> 
-        <section class="Header">
-            <div class="nav-links">
-      
-              <nav>
-                <ul>
-                <li> <a href="index.html">Home </a></li>
-                <li> <a href="./accounting.html">About </a></li>
-                <li> <a href="https://www.google.com">Help </a></li>        
-                </ul>
-      </nav>
-            </div>
-    </header>
-    <main>
-       
-    </main>
-    <div>
-        <a href="https://www.facebook.com"></a>
-        <a href="https://twitter.com"></a>
-        <a href="https://www.instagram.com"></a>
-      </div>
+  <header>
+
+    <nav>
+      <ul>
+        <li> <a href="index.html">Home </a></li>
+        <li> <a href="./accounting.html"> Accounting </a></li>
+        <li> <a href="https://www.google.com">Help </a></li>
+      </ul>
+    </nav>
+    <h1> Accounting Details</h1>
+
+  </header>
+  <br><br><br><br>
+
+  <main>
+    <table id="myTable">
+      <thead>
+        <tr>
+          <th>Department</th>
+          <th>Number of Employees</th>
+          <th>Average Salary</th>
+          <th>Total Salary</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+      <tfoot id="tableFoot"></tfoot>
+    </table>
+  </main>
+  <script src="./accounting.js"></script>
+  <!-- <script src="./char.js"></script> -->
+  </main>
+
+  
+  <footer>
+    <a href="https://www.facebook.com" id="myLink">facebook</a>
+    <a href="https://twitter.com" id="twitter">twitter</a>
+    <a href="https://www.instagram.com" id="myLink">instagram</a>
     <p>&copy; 2023 All rights reserved.</p>
+  </footer>
 </body>
+
 </html>

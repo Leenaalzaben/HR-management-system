@@ -1,96 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home page</title>
-    <link rel="stylesheet" href="./home.css">
-</head>
-<body>
-   
-  
-    <header>
-        <section class="Header">
-            <div class="nav-links">
-      
-              <nav>
-                <ul>
-                <li> <a href="index.html">Home </a></li>
-                <li> <a href="./accounting.html">About </a></li>
-                <li> <a href="https://www.google.com">Help </a></li>        
-                </ul>
-      </nav>
-            </div>
-    </header>
-    <main>
-        <script src="./app.js"></script>
 
-        <!-- table for employee -->
-        <!-- <form action="">
-            <section>
-        <table>
-            <tr>
-              <th>Employee ID</th>
-              <th>Full Name</th>
-              <th>Department</th>
-              <th>Level</th>
-            </tr>
-            <tr>
-              <td>1000</td>
-              <td>Ghazi Samer</td>
-              <td>Administration</td>
-              <td>Senior</td>
-            </tr>
-            <tr>
-              <td>1001</td>
-              <td>Lana Ali</td>
-              <td>Finance</td>
-              <td>Senior</td>
-            </tr>
-            <tr>
-              <td>1002</td>
-              <td>Tamara Ayoub</td>
-              <td>Marketing</td>
-              <td>Senior</td>
-            </tr>
-            <tr>
-              <td>1003</td>
-              <td>Safi Walid</td>
-              <td>Administration</td>
-              <td>Mid-Senior</td>
-            </tr>
-            <tr>
-              <td>1004</td>
-              <td>Omar Zaid</td>
-              <td>Development</td>
-              <td>Senior</td>
-            </tr>
-            <tr>
-              <td>1005</td>
-              <td>Rana Saleh</td>
-              <td>Development</td>
-              <td>Junior</td>
-            </tr>
-            <tr>
-              <td>1006</td>
-              <td>Hadi Ahmad</td>
-              <td>Finance</td>
-              <td>Mid-Senior</td>
-            </tr>
-          </table>
-            </section>
-        </form> -->
-          
-    </main>
-    <footer>
-        <div>
-            <a href="https://www.facebook.com"></a>
-            <a href="https://twitter.com"></a>
-            <a href="https://www.instagram.com"></a>
-          </div>
-        <p>&copy; 2023 All rights reserved.</p>
-    </footer>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Home page </title>
+  <link rel="stylesheet" href="./home.css">
+</head>
+
+<body>
+
+  <header>
+    <!-- <section class="Header"> -->
+      <!-- id="navbar" -->
+        <nav >
+          <ul>
+            <li> <a href="index.html">Home </a></li>
+            <li> <a href="./accounting.html"> Accounting </a></li>
+            <li> <a href="https://www.google.com">Help </a></li>
+          </ul>
+        </nav>
+         
+  </header>
+  <br><br><br><br>
+
+  <main>
+<div id="cardContainer" ></div> 
+<br><br><br>
+
+    <!-- <form action="./accounting.html"> -->
+
+    <form id="myForm">
+      <br>
+      <!-- Add Label -->
+      <!-- 1. FullName -->
     
+        <label for="fullName">Full Name:</label><br>
+        <input type="text" id="fullName" placeholder="Enter your username" value =""><br><br>
+
+      <!-- 2. Department -->
+      
+        <label for="Department"> Department : </label><br>
+        <select id="Department"name="Department" ><br>
+          <option value="Administration">Administration</option>
+          <option value="Marketing">Marketing</option>
+          <option value="Development">Development</option>
+          <option value="Finance">Finance</option>
+        </select>
+        <br><br>
+          <!-- 3. Level -->
+      
+        <label for="level"> Choose your level : </label><br>
+        <select id="level" level='level'><br>
+          <option value="Junior">Junior</option>
+          <option value="Mid-Senior">Mid-Senior</option>
+          <option value="Senior">Senior</option>
+        </select>
+      
+      <br><br>
+
+      <!--4. Image foe form -->
+     
+       
+       
+
+        <label for="imgurl">Image URL: </label><br><br>
+        <input type="text" name="imgurl" id="imgurl" placeholder="image path">
+
+
+
+        <!-- <label for="img"> Image Url:</label><br>
+        <input type="text" id="img" name="image"><br> -->
+
+     
+      <br><br><br>
+      <!-- 5.submit botton -->
+        <input type="submit" value="Submit">
+        <br><br><br>
+      
+
+
+      
+    </form>
+    <script src="./app.js"></script>
+  </main>
+
+  <footer >
+    
+      <a href="https://www.facebook.com"id="myLink">facebook</a>
+      <a href="https://twitter.com"id="twitter">twitter</a>
+      <a href="https://www.instagram.com"id="myLink">instagram</a>
+    
+    <p>&copy; 2023 All rights reserved.</p>
+   
+  </footer>
+
 </body>
+
 </html>

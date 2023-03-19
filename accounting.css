@@ -1,0 +1,55 @@
+body {
+    color: black;
+    background-color: #f9f5ea;
+
+}
+
+
+
+
+h1 {
+    font-family: "Sofia", sans-serif;
+    margin-top: 70px;
+
+    text-indent: 70px;
+    letter-spacing: 3px;
+}
+
+
+table,
+th,
+td {
+    border: 1px solid;
+    font-size: 30px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 50%;
+    border: 2px solid;
+    
+
+}
+
+th {
+    height: 70px;
+    background-color: #6bb89c;
+    color: white;
+}
+
+td {
+    height: 70px;
+    text-align: center;
+}
+
+th,
+td {
+    padding: 8px;
+    border-bottom: 1px solid #5a2121;
+
+
+}
+
+tr:hover {
+    background-color:#d680e4;
+}

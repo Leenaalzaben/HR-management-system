@@ -1,6 +1,6 @@
 body {
     color: black;
-    background-color: #f9eaea;
+    background-color: #f9f5ea;
 
 }
 
@@ -11,10 +11,8 @@ h1 {
     font-family: "Sofia", sans-serif;
     margin-top: 70px;
 
-    /* text-shadow: 2px 2px rgb(144, 131, 131); */
     text-indent: 70px;
     letter-spacing: 3px;
-    /* color:#6bb89c; */
 }
 
 
@@ -27,8 +25,9 @@ td {
 
 table {
     border-collapse: collapse;
-    width: 80%;
+    width: 50%;
     border: 2px solid;
+    
 
 }
 
@@ -45,12 +44,12 @@ td {
 
 th,
 td {
-    padding: 12px;
+    padding: 8px;
     border-bottom: 1px solid #5a2121;
 
 
 }
 
 tr:hover {
-    background-color:#9e8c35;
+    background-color:#d680e4;
 }

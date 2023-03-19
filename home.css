@@ -1,5 +1,5 @@
 nav {
-  background-color: #9e8c35;
+  background-color: #d680e4;
   overflow: hidden;
   font-size: 18px;
   
@@ -52,7 +52,6 @@ img {
 
 div {
   width: 350px;
-  /* background-color: #ab5353; */
   padding: 60px;
 }
 
@@ -132,11 +131,11 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background-color: #9e8c35;
+  background-color:#d680e4;
 }
 
 footer {
-  background-color: #9e8c35;
+  background-color: #d680e4;
   color: #fff;
   display: flex;
   justify-content: center;
